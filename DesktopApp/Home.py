@@ -1,12 +1,22 @@
 import tkinter as tk
 import tkinter.font as tkFont
+from Model import Model
+from Objective1 import Objective1
+from Objective2 import Objective2
+from Objective3 import Objective3
+from Objective4 import Objective4
+from Objective5 import Objective5
+
+
+
 
 class App:
     def __init__(self, root):
+        self.model=Model()
         #setting title
-        root.title("undefined")
+        root.title("Home")
         #setting window size
-        width=600
+        width=800
         height=500
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
@@ -23,7 +33,7 @@ class App:
         GLabel_653["justify"] = "center"
         GLabel_653["text"] = "Result Analysis"
         GLabel_653["relief"] = "flat"
-        GLabel_653.place(x=80,y=20,width=424,height=52)
+        GLabel_653.place(x=120,y=30,width=524,height=72)
 
         GButton_887=tk.Button(root)
         GButton_887["bg"] = "#efefef"
@@ -32,8 +42,8 @@ class App:
         GButton_887["fg"] = "#000000"
         GButton_887["justify"] = "center"
         GButton_887["text"] = "Performance in a subject"
-        GButton_887.place(x=30,y=110,width=124,height=41)
-        GButton_887["command"] = self.GButton_887_command
+        GButton_887.place(x=30,y=110,width=224,height=41)
+        GButton_887["command"] = self.Performance_subject
 
         GButton_637=tk.Button(root)
         GButton_637["bg"] = "#efefef"
@@ -42,8 +52,8 @@ class App:
         GButton_637["fg"] = "#000000"
         GButton_637["justify"] = "center"
         GButton_637["text"] = "Performance prediction of a subject"
-        GButton_637.place(x=30,y=170,width=124,height=41)
-        GButton_637["command"] = self.GButton_637_command
+        GButton_637.place(x=30,y=170,width=224,height=41)
+        GButton_637["command"] = self.prediction_subject
 
         GButton_932=tk.Button(root)
         GButton_932["bg"] = "#efefef"
@@ -52,8 +62,8 @@ class App:
         GButton_932["fg"] = "#000000"
         GButton_932["justify"] = "center"
         GButton_932["text"] = "Backlog Analysis"
-        GButton_932.place(x=30,y=230,width=124,height=41)
-        GButton_932["command"] = self.GButton_932_command
+        GButton_932.place(x=30,y=230,width=224,height=41)
+        GButton_932["command"] = self.Backlog
 
         GButton_513=tk.Button(root)
         GButton_513["bg"] = "#efefef"
@@ -62,8 +72,8 @@ class App:
         GButton_513["fg"] = "#000000"
         GButton_513["justify"] = "center"
         GButton_513["text"] = "Pass/Fail Analysis "
-        GButton_513.place(x=30,y=290,width=124,height=41)
-        GButton_513["command"] = self.GButton_513_command
+        GButton_513.place(x=30,y=290,width=224,height=41)
+        GButton_513["command"] = self.Pass_Fail
 
         GButton_84=tk.Button(root)
         GButton_84["bg"] = "#efefef"
@@ -72,8 +82,8 @@ class App:
         GButton_84["fg"] = "#000000"
         GButton_84["justify"] = "center"
         GButton_84["text"] = "Semester wise performance"
-        GButton_84.place(x=30,y=350,width=124,height=41)
-        GButton_84["command"] = self.GButton_84_command
+        GButton_84.place(x=30,y=350,width=224,height=41)
+        GButton_84["command"] = self.Semester_performance
 
         GButton_180=tk.Button(root)
         GButton_180["bg"] = "#efefef"
@@ -81,32 +91,38 @@ class App:
         GButton_180["font"] = ft
         GButton_180["fg"] = "#000000"
         GButton_180["justify"] = "center"
-        GButton_180["text"] = "Consecutive  Year Score Prediction "
-        GButton_180.place(x=30,y=410,width=124,height=41)
-        GButton_180["command"] = self.GButton_180_command
+        GButton_180["text"] = "Consecutive Year Score Prediction"
+        GButton_180.place(x=30,y=410,width=224,height=41)
+        GButton_180["command"] = self.Consecutive_Prediction
 
-    def GButton_887_command(self):
-        print("command")
-
-
-    def GButton_637_command(self):
-        print("command")
+    def Performance_subject(self):
+        newWindow = tk.Toplevel(root)
+        Objective1(newWindow,self.model)
 
 
-    def GButton_932_command(self):
-        print("command")
+    def prediction_subject(self):
+        newWindow = tk.Toplevel(root)
+        # Objective2(newWindow,self.model)
 
 
-    def GButton_513_command(self):
-        print("command")
+    def Backlog(self):
+        newWindow = tk.Toplevel(root)
+        Objective3(newWindow,self.model)
 
 
-    def GButton_84_command(self):
-        print("command")
+    def Pass_Fail(self):
+        newWindow = tk.Toplevel(root)
+        Objective4(newWindow,self.model)
 
 
-    def GButton_180_command(self):
-        print("command")
+    def Semester_performance(self):
+        newWindow = tk.Toplevel(root)
+        Objective5(newWindow,self.model)
+
+
+    def Consecutive_Prediction(self):
+        newWindow = tk.Toplevel(root)
+        # Objective6(newWindow,self.model)
 
 if __name__ == "__main__":
     root = tk.Tk()
