@@ -50,7 +50,7 @@ class Objective4:
         self.model.Objective4(str(self.subcode.get()).upper())
         # print(str(self.subcode.get()).upper())
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = App(root)
-    root.mainloop()
+# if __name__ == "__main__":
+#     root = tk.Tk()
+#     app = App(root)
+#     root.mainloop()
