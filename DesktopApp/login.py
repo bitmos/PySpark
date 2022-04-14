@@ -1,7 +1,13 @@
 #imports
+from curses import newwin
 from tkinter import *
+import tkinter as tk
 from tkinter import messagebox as ms
+from Model import Model
 import sqlite3
+from time import time, sleep
+
+from Home import Home
 
 # make database and users (if not exists already) table at programme start up
 with sqlite3.connect('login.db') as db:
@@ -22,7 +28,25 @@ class main:
         self.n_username = StringVar()
         self.n_password = StringVar()
         #Create Widgets
-        self.widgets()
+        # self.widgets()
+        self.head = Label(self.master,text = 'LOGIN',font = ('',35),pady = 20)
+        self.head.pack()
+        self.logf = Frame(self.master,padx =10,pady = 10)
+        Label(self.logf,text = 'Username: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
+        Entry(self.logf,textvariable = self.username,bd = 5,font = ('',15)).grid(row=0,column=1)
+        Label(self.logf,text = 'Password: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
+        Entry(self.logf,textvariable = self.password,bd = 5,font = ('',15),show = '*').grid(row=1,column=1)
+        Button(self.logf,text = ' Login ',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.login).grid()
+        Button(self.logf,text = ' Create Account ',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.cr).grid(row=2,column=1)
+        self.logf.pack()
+        
+        self.crf = Frame(self.master,padx =10,pady = 10)
+        Label(self.crf,text = 'Username: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
+        Entry(self.crf,textvariable = self.n_username,bd = 5,font = ('',15)).grid(row=0,column=1)
+        Label(self.crf,text = 'Password: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
+        Entry(self.crf,textvariable = self.n_password,bd = 5,font = ('',15),show = '*').grid(row=1,column=1)
+        Button(self.crf,text = 'Create Account',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.new_user).grid()
+        Button(self.crf,text = 'Go to Login',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.log).grid(row=2,column=1)
 
     #Login Function
     def login(self):
@@ -36,8 +60,10 @@ class main:
         result = c.fetchall()
         if result:
             self.logf.pack_forget()
-            self.head['text'] = self.username.get() + '\n Loged In'
-            self.head['pady'] = 150
+            newWindow=tk.Toplevel(self.master)
+            Home(newWindow)
+            # sleep(10)
+            self.master.withdraw()
         else:
             ms.showerror('Oops!','Username Not Found.')
             
@@ -75,24 +101,7 @@ class main:
         
     #Draw Widgets
     def widgets(self):
-        self.head = Label(self.master,text = 'LOGIN',font = ('',35),pady = 20)
-        self.head.pack()
-        self.logf = Frame(self.master,padx =10,pady = 10)
-        Label(self.logf,text = 'Username: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
-        Entry(self.logf,textvariable = self.username,bd = 5,font = ('',15)).grid(row=0,column=1)
-        Label(self.logf,text = 'Password: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
-        Entry(self.logf,textvariable = self.password,bd = 5,font = ('',15),show = '*').grid(row=1,column=1)
-        Button(self.logf,text = ' Login ',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.login).grid()
-        Button(self.logf,text = ' Create Account ',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.cr).grid(row=2,column=1)
-        self.logf.pack()
-        
-        self.crf = Frame(self.master,padx =10,pady = 10)
-        Label(self.crf,text = 'Username: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
-        Entry(self.crf,textvariable = self.n_username,bd = 5,font = ('',15)).grid(row=0,column=1)
-        Label(self.crf,text = 'Password: ',font = ('',20),pady=5,padx=5).grid(sticky = W)
-        Entry(self.crf,textvariable = self.n_password,bd = 5,font = ('',15),show = '*').grid(row=1,column=1)
-        Button(self.crf,text = 'Create Account',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.new_user).grid()
-        Button(self.crf,text = 'Go to Login',bd = 3 ,font = ('',15),padx=5,pady=5,command=self.log).grid(row=2,column=1)
+        pass
 
 if __name__ == '__main__':
 	#Create Object

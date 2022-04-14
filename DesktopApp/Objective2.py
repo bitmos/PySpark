@@ -1,11 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
-
+import sys
+import os
+from pyspark.ml.classification import RandomForestClassificationModel
 import tkinter.font as tkFont
+from pyspark.ml.pipeline import PipelineModel
 
 class Objective2:
-    def __init__(self, root):
+    def __init__(self, root,model):
         #setting title
+        self.model=model
         root.title("Performance prediction of a subject")
         #setting window size
         width=705
@@ -89,9 +93,12 @@ class Objective2:
         GMessage_114.place(x=420,y=340,width=103,height=35)
 
     def GButton_225_command(self):
-        print(int(str(self.usn.get())),int(str(self.year.get())),int(str(self.code.get())))
+        # print(int(str(self.usn.get())),int(str(self.year.get())),int(str(self.code.get())))
+        persistedModel = RandomForestClassificationModel.load("/home/bitmos/Documents/GitHub/PySpark/DesktopApp/Model1")
+        persistedModel.transform(str(self.usn.get()),int(str(self.year.get())),int(str(self.code.get())))
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = Objective2(root)
-    root.mainloop()
+
+# if __name__ == "__main__":
+#     root = tk.Tk()
+#     app = Objective2(root)
+#     root.mainloop()
