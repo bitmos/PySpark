@@ -6,7 +6,7 @@ class Model:
     def __init__(self):
         # self.csv=csv
         spark=SparkSession.builder.appName("Analysis").getOrCreate()
-        self.df_ResultData=spark.read.csv("/home/bitmos/Documents/GitHub/PySpark/DesktopApp/Results_Data.csv",header=True,inferSchema=True)
+        self.df_ResultData=spark.read.csv("Results_Data.csv",header=True,inferSchema=True)
 
     def Objective1(self,subname):
         self.subname=subname

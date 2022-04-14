@@ -38,10 +38,10 @@ class Objective5:
         GLabel_312["font"] = ft
         GLabel_312["fg"] = "#333333"
         GLabel_312["justify"] = "center"
-        GLabel_312["text"] = "Subject code :-"
+        GLabel_312["text"] = "Student USN :-"
         GLabel_312.place(x=30,y=130,width=286,height=117)
 
-        GLineEdit_856=ttk.Entry(root,text = "Enter Subject Code",textvariable=self.usn,width=29,font=("Times",22))
+        GLineEdit_856=ttk.Entry(root,text = "Enter USN",textvariable=self.usn,width=29,font=("Times",22))
         GLineEdit_856.place(x=320,y=170,width=197,height=41)
 
         GButton_229=tk.Button(root)
