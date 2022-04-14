@@ -10,21 +10,22 @@ from Objective5 import Objective5
 
 
 
-class App:
-    def __init__(self, root):
+class Home:
+    def __init__(self,root):
+        self.root=root
         self.model=Model()
         #setting title
-        root.title("Home")
+        self.root.title("Home")
         #setting window size
         width=800
         height=500
-        screenwidth = root.winfo_screenwidth()
-        screenheight = root.winfo_screenheight()
+        screenwidth = self.root.winfo_screenwidth()
+        screenheight = self.root.winfo_screenheight()
         alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
-        root.geometry(alignstr)
-        root.resizable(width=False, height=False)
+        self.root.geometry(alignstr)
+        self.root.resizable(width=False, height=False)
 
-        GLabel_653=tk.Label(root)
+        GLabel_653=tk.Label(self.root)
         GLabel_653["activebackground"] = "#a75454"
         GLabel_653["activeforeground"] = "#954747"
         ft = tkFont.Font(family='Times',size=54)
@@ -35,7 +36,7 @@ class App:
         GLabel_653["relief"] = "flat"
         GLabel_653.place(x=120,y=30,width=524,height=72)
 
-        GButton_887=tk.Button(root)
+        GButton_887=tk.Button(self.root)
         GButton_887["bg"] = "#efefef"
         ft = tkFont.Font(family='Times',size=10)
         GButton_887["font"] = ft
@@ -45,7 +46,7 @@ class App:
         GButton_887.place(x=30,y=110,width=224,height=41)
         GButton_887["command"] = self.Performance_subject
 
-        GButton_637=tk.Button(root)
+        GButton_637=tk.Button(self.root)
         GButton_637["bg"] = "#efefef"
         ft = tkFont.Font(family='Times',size=10)
         GButton_637["font"] = ft
@@ -55,7 +56,7 @@ class App:
         GButton_637.place(x=30,y=170,width=224,height=41)
         GButton_637["command"] = self.prediction_subject
 
-        GButton_932=tk.Button(root)
+        GButton_932=tk.Button(self.root)
         GButton_932["bg"] = "#efefef"
         ft = tkFont.Font(family='Times',size=10)
         GButton_932["font"] = ft
@@ -65,7 +66,7 @@ class App:
         GButton_932.place(x=30,y=230,width=224,height=41)
         GButton_932["command"] = self.Backlog
 
-        GButton_513=tk.Button(root)
+        GButton_513=tk.Button(self.root)
         GButton_513["bg"] = "#efefef"
         ft = tkFont.Font(family='Times',size=10)
         GButton_513["font"] = ft
@@ -75,7 +76,7 @@ class App:
         GButton_513.place(x=30,y=290,width=224,height=41)
         GButton_513["command"] = self.Pass_Fail
 
-        GButton_84=tk.Button(root)
+        GButton_84=tk.Button(self.root)
         GButton_84["bg"] = "#efefef"
         ft = tkFont.Font(family='Times',size=10)
         GButton_84["font"] = ft
@@ -85,7 +86,7 @@ class App:
         GButton_84.place(x=30,y=350,width=224,height=41)
         GButton_84["command"] = self.Semester_performance
 
-        GButton_180=tk.Button(root)
+        GButton_180=tk.Button(self.root)
         GButton_180["bg"] = "#efefef"
         ft = tkFont.Font(family='Times',size=10)
         GButton_180["font"] = ft
@@ -95,36 +96,37 @@ class App:
         GButton_180.place(x=30,y=410,width=224,height=41)
         GButton_180["command"] = self.Consecutive_Prediction
 
+
     def Performance_subject(self):
-        newWindow = tk.Toplevel(root)
+        newWindow = tk.Toplevel(self.root)
         Objective1(newWindow,self.model)
 
 
     def prediction_subject(self):
-        newWindow = tk.Toplevel(root)
-        # Objective2(newWindow,self.model)
+        newWindow = tk.Toplevel(self.root)
+        Objective2(newWindow,self.model)
 
 
     def Backlog(self):
-        newWindow = tk.Toplevel(root)
+        newWindow = tk.Toplevel(self.root)
         Objective3(newWindow,self.model)
 
 
     def Pass_Fail(self):
-        newWindow = tk.Toplevel(root)
+        newWindow = tk.Toplevel(self.root)
         Objective4(newWindow,self.model)
 
 
     def Semester_performance(self):
-        newWindow = tk.Toplevel(root)
+        newWindow = tk.Toplevel(self.root)
         Objective5(newWindow,self.model)
 
 
     def Consecutive_Prediction(self):
-        newWindow = tk.Toplevel(root)
+        newWindow = tk.Toplevel(self.root)
         # Objective6(newWindow,self.model)
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = App(root)
+    app = Home(root)
     root.mainloop()
