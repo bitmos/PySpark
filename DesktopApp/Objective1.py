@@ -1,9 +1,7 @@
-from pyexpat import model
 import tkinter as tk
 from tkinter import ttk
 import tkinter.font as tkFont
 
-from Model import Model
 
 class Objective1:
     def __init__(self, root,model):
@@ -63,7 +61,3 @@ class Objective1:
         self.model.Objective1(str(self.subcode.get()).upper())
         
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = Objective1(root)
-    root.mainloop()

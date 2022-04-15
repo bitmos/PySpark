@@ -59,7 +59,3 @@ class Objective5:
     def GButton_229_command(self):
         self.model.Objective5(str(self.usn.get()).upper())
 
-# if __name__ == "__main__":
-#     root = tk.Tk()
-#     app = App(root)
-#     root.mainloop()

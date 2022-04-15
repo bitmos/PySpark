@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 import tkinter.font as tkFont
-from Model import Model
 
 class Objective3:
     def __init__(self, root,model):
@@ -105,7 +104,3 @@ class Objective3:
                 passedsub=passedsub+" "+i
             self.passed.set(passedsub)
 
-# if __name__ == "__main__":
-#     root = tk.Tk()
-#     app = Objective3(root)
-#     root.mainloop()

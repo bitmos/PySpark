@@ -6,6 +6,7 @@ from Objective2 import Objective2
 from Objective3 import Objective3
 from Objective4 import Objective4
 from Objective5 import Objective5
+from Objective6 import Objective6
 
 
 
@@ -35,6 +36,14 @@ class Home:
         GLabel_653["text"] = "Result Analysis"
         GLabel_653["relief"] = "flat"
         GLabel_653.place(x=120,y=30,width=524,height=72)
+
+        GLabel_654=tk.Message(self.root,width=320)
+        ft = tkFont.Font(family='Times',size=29)
+        GLabel_654["font"] = ft
+        GLabel_654["fg"] = "#040404"
+        GLabel_654["justify"] = "left"
+        GLabel_654["text"] = "Select From the options given on the left navigation bar to obtain desired results."
+        GLabel_654.place(x=320,y=120,width=320,height=302)
 
         GButton_887=tk.Button(self.root)
         GButton_887["bg"] = "#efefef"
@@ -124,7 +133,7 @@ class Home:
 
     def Consecutive_Prediction(self):
         newWindow = tk.Toplevel(self.root)
-        # Objective6(newWindow,self.model)
+        Objective6(newWindow,self.model)
 
 if __name__ == "__main__":
     root = tk.Tk()

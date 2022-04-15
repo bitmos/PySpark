@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.font as tkFont
 
-class App:
+class Objective6:
     def __init__(self, root,model):
         #setting title
         self.model=model
@@ -19,6 +19,8 @@ class App:
         self.usn=tk.StringVar()
         self.code=tk.StringVar()
         self.year=tk.StringVar()
+        self.result=tk.StringVar()
+
 
         GLabel_768=tk.Label(root)
         ft = tkFont.Font(family='Times',size=31)
@@ -52,13 +54,13 @@ class App:
         GLabel_491["text"] = "Year :-"
         GLabel_491.place(x=80,y=260,width=86,height=30)
 
-        GLineEdit_211=ttk.Entry(root,text = "Enter USN",textvariable=self.usn,width=29,font=("Times",22))
+        GLineEdit_211=ttk.Entry(root,text = "Enter USN",textvariable=self.usn,width=29,font=("Times",18))
         GLineEdit_211.place(x=300,y=130,width=148,height=35)
 
-        GLineEdit_368=ttk.Entry(root,text = "Enter Code",textvariable=self.code,width=29,font=("Times",22))
+        GLineEdit_368=ttk.Entry(root,text = "Enter Code",textvariable=self.code,width=29,font=("Times",18))
         GLineEdit_368.place(x=300,y=190,width=148,height=35)
 
-        GLineEdit_750=ttk.Entry(root,text = "Enter Year",textvariable=self.year,width=29,font=("Times",22))
+        GLineEdit_750=ttk.Entry(root,text = "Enter Year",textvariable=self.year,width=29,font=("Times",18))
         GLineEdit_750.place(x=300,y=260,width=148,height=35)
 
         GButton_225=tk.Button(root)
@@ -79,7 +81,7 @@ class App:
         GLabel_957["text"] = "Total Score :-"
         GLabel_957.place(x=270,y=330,width=167,height=59)
 
-        GMessage_114=tk.Message(root)
+        GMessage_114=tk.Message(root,textvariable=self.result)
         GMessage_114["bg"] = "#1be8d5"
         ft = tkFont.Font(family='Times',size=22)
         GMessage_114["font"] = ft
@@ -89,9 +91,9 @@ class App:
         GMessage_114.place(x=450,y=340,width=109,height=39)
 
     def GButton_225_command(self):
-        print(int(str(self.usn.get())),int(str(self.year.get())),int(str(self.code.get())))
+        a=str(self.usn.get())
+        b=int(str(self.code.get())[-1])
+        c=int(str(self.year.get()))
+        data=self.model.encode(a,b,c)
+        self.result.set(int(self.model.Objective6(data)))
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = App(root)
-    root.mainloop()
