@@ -4,7 +4,7 @@
 
 ### Direction to run the above application
  
-1. Install the requirements.txt with the command 
+1. Install the requirements.txt with the command :
 pip install -r requirements.txt
 
 2. Navigate into DesktopApp folder 
