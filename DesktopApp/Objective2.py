@@ -93,9 +93,9 @@ class Objective2:
     
 
     def GButton_225_command(self):
-        a=str(self.usn.get())
-        b=int(str(self.code.get())[-1])
-        c=int(str(self.year.get()))
+        a=str(self.usn.get().upper())
+        b=int(str(self.code.get().upper())[-1])
+        c=int(str(self.year.get().upper()))
         data=self.model.encode(a,b,c)
         self.result.set(self.model.Objective2(data))
 

@@ -3,10 +3,7 @@ from curses import newwin
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox as ms
-from Model import Model
 import sqlite3
-from time import time, sleep
-
 from Home import Home
 
 # make database and users (if not exists already) table at programme start up

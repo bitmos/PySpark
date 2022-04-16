@@ -44,7 +44,7 @@ class Model:
         
 
     def Objective2(self,data):
-        persistedModel = RandomForestClassificationModel.load("/home/bitmos/Documents/GitHub/PySpark/DesktopApp/models")
+        persistedModel = RandomForestClassificationModel.load("gradeModel")
         predictions = persistedModel.transform(data)
         data_iter=predictions.rdd.toLocalIterator()
         for i in data_iter:
@@ -77,13 +77,26 @@ class Model:
                         valueWhenTrue
                         ).otherwise(col("RESULT"))
                         )
-        plt.title('Plot of Total Students Passed in a Subject')
+        fig = plt.figure()
+        plt.title('Plot of Total Students Passed in Subject '+ subname)
         plt.xlabel('Result')
         plt.ylabel('Number Of Students')
-        df_BySub=df_ResultData.filter(df_ResultData.SCODE == self.subname)
-        x=df_BySub.toPandas()["RESULT"].values.tolist()
-        plt.hist(x)
+        x = ['Pass','Fail']
+        x_pos = [i for i , _ in enumerate(x)]
+        y=[df_ResultData.filter(df_ResultData.RESULT == "P").count(),df_ResultData.filter(df_ResultData.RESULT == "F").count()]
+        plt.bar(x,y)
+        plt.xticks(x_pos, x)
+        plt.tight_layout()
+        fig.set_figheight(8)
+        fig.set_figwidth(6)
         plt.show()
+        # plt.title('Plot of Total Students Passed in a Subject')
+        # plt.xlabel('Result')
+        # plt.ylabel('Number Of Students')
+        # df_BySub=df_ResultData.filter(df_ResultData.SCODE == self.subname)
+        # x=df_BySub.toPandas()["RESULT"].values.tolist()
+        # plt.hist(x)
+        # plt.show()
        
 
     def Objective5(self,usn):
@@ -108,7 +121,7 @@ class Model:
         plt.show()
 
     def Objective6(self,data):
-        persistedModel = LinearRegressionModel.load("/home/bitmos/Documents/GitHub/PySpark/DesktopApp/model2")
+        persistedModel = LinearRegressionModel.load("scoreModel")
         predictions = persistedModel.transform(data)
         data_iter=predictions.rdd.toLocalIterator()
         for i in data_iter:
