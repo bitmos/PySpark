@@ -91,9 +91,9 @@ class Objective6:
         GMessage_114.place(x=450,y=340,width=109,height=39)
 
     def GButton_225_command(self):
-        a=str(self.usn.get())
-        b=int(str(self.code.get())[-1])
-        c=int(str(self.year.get()))
+        a=str(self.usn.get().upper())
+        b=int(str(self.code.get().upper())[-1])
+        c=int(str(self.year.get().upper()))
         data=self.model.encode(a,b,c)
         self.result.set(int(self.model.Objective6(data)))
 
