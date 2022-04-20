@@ -44,26 +44,26 @@ The Non-function requirements of this project include:
 5. Online User Documentation and Help: The application can be easily available in GitHub.
 
 ## Screenshots
-Login
+
 ![](/assets/Login.png)
 
-Home Page
+
 ![](/assets/Home_draft.png)
 
-Student perfomance in a subject
+
 ![](/assets/1_1.png)
 
-Performance Prediction
+
 ![](/assets/2_1.png)
 
-Backlog Analysis
+
 ![](/assets/3_1.png)
 
-Result Analysis
+
 ![](/assets/4_1.png)
 
-Semester-wise Performance Analysis
+
 ![](/assets/5_1.png)
 
-Consecutive Score Prediction
+
 ![](/assets/6_1.png)
