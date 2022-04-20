@@ -45,7 +45,7 @@ The Non-function requirements of this project include:
 
 ## Screenshots
 Login
-![[https://github.com/bitmos/PySpark/blob/ac03e7ec8947a5663de9d26507c196f0a81d26d0/assets/1_1.png]]
+![[/assets/1_1.png]]
 
 Home Page
 ![[Pasted image 20220421004031.png]]
