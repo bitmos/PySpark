@@ -54,7 +54,7 @@ Student perfomance in a subject
 ![[Pasted image 20220421004109.png]]
 
 Performance Prediction
-![[2_1.jpg]]
+![[https://ibb.co/dLV6qQy]]
 
 Backlog Analysis
 ![[Pasted image 20220421004432.png]]
