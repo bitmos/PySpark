@@ -45,25 +45,25 @@ The Non-function requirements of this project include:
 
 ## Screenshots
 Login
-![](/assets/1_1.png)
+![]()
 
 Home Page
-![[/assets/2_1.png]]
+![]()
 
 Student perfomance in a subject
-![[Pasted image 20220421004109.png]]
+![](/assets/1_1.png)
 
 Performance Prediction
-![[https://ibb.co/dLV6qQy]]
+![](/assets/2_1.png)
 
 Backlog Analysis
-![[Pasted image 20220421004432.png]]
+![](/assets/3_1.png)
 
 Result Analysis
-![[Pasted image 20220421004555.png]]
+![](/assets/4_1.png)
 
 Semester-wise Performance Analysis
-![[Pasted image 20220421004616.png]]
+![](/assets/5_1.png)
 
 Consecutive Score Prediction
-![[6_1.jpg]]
+![](/assets/6_1.png)
