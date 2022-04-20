@@ -45,7 +45,7 @@ The Non-function requirements of this project include:
 
 ## Screenshots
 Login
-![[/assets/1_1.png]]
+![](/assets/1_1.png)
 
 Home Page
 ![[Pasted image 20220421004031.png]]
