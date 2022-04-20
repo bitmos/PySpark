@@ -45,10 +45,10 @@ The Non-function requirements of this project include:
 
 ## Screenshots
 Login
-![]()
+![](/assets/Login.png)
 
 Home Page
-![]()
+![](/assets/Home_draft.png)
 
 Student perfomance in a subject
 ![](/assets/1_1.png)
