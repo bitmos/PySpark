@@ -48,7 +48,7 @@ Login
 ![](/assets/1_1.png)
 
 Home Page
-![[Pasted image 20220421004031.png]]
+![[/assets/2_1.png]]
 
 Student perfomance in a subject
 ![[Pasted image 20220421004109.png]]
