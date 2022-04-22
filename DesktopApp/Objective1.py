@@ -25,7 +25,7 @@ class Objective1:
         GLabel_189["font"] = ft
         GLabel_189["fg"] = "#333333"
         GLabel_189["justify"] = "center"
-        GLabel_189["text"] = "Student Performance in "
+        GLabel_189["text"] = "Students Performance in "
         GLabel_189.place(x=0,y=0,width=589,height=87)
 
         GLabel_635=tk.Label(root)
