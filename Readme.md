@@ -13,6 +13,7 @@
 1. Install the requirements.txt with the following commands :
 
 sudo apt-get install python3-tk
+
 pip install -r requirements.txt
 
 2. Navigate into DesktopApp folder 
