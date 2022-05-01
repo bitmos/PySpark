@@ -2,7 +2,7 @@
 
 ##### A end-to-end application developed in python using PySpark and Tkinter for predicting and visualizing university marks data
 
-###Prerequisites to run the application
+### Prerequisites to run the application
 1. Java JDK version 8(strictly) is required
 	- sudo apt install openjdk-8-jre-headless
 
