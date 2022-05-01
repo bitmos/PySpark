@@ -4,8 +4,7 @@
 
 ###Prerequisites to run the application
 1. Java JDK version 8(strictly) is required
-	- To download 
-	sudo apt install openjdk-8-jre-headless
+	- sudo apt install openjdk-8-jre-headless
 
 
 ### Direction to run the above application
